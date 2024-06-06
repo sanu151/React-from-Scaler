@@ -18,7 +18,18 @@
     ></script>
 
     <script>
-      const message = React.createElement("h1", {}, "Hello form React");
+      const message = React.createElement(
+        "div",
+        { id: "parent" },
+        React.createElement("div", { id: "child" }, [
+          React.createElement("h2", { id: "greeting" }, "Hello form React"),
+          React.createElement(
+            "h3",
+            { id: "greeting2" },
+            "Hello form React Heading3"
+          ),
+        ])
+      );
       const root = ReactDOM.createRoot(document.getElementById("root"));
       root.render(message);
     </script>
